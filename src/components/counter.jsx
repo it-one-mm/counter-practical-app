@@ -5,9 +5,12 @@ class Counter extends Component {
     count: 0
   };
 
-  handleIncrement = () => {
-    this.state.count++;
-    // this.setState({ count: this.state.count + 1 });
+  handleIncrement = product => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  doHandleIncrement = () => {
+    this.handleIncrement({ id: 1 });
   };
 
   render() {
@@ -17,7 +20,7 @@ class Counter extends Component {
           {this.formatCounter()}
         </span>
         <button
-          onClick={this.handleIncrement}
+          onClick={this.doHandleIncrement}
           className="btn btn-secondary btn-sm"
         >
           Incrememnt
