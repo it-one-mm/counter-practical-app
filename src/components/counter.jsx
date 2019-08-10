@@ -4,7 +4,17 @@ class Counter extends Component {
 
     state = {
         count: 0,
-        tags: ["tag1", "tag2", "tag3"]
+        tags: []
+    }
+
+    renderTags() {
+        if (this.state.tags.length === 0) return <p>There are no tags!</p>;
+        
+        return (
+            <ul>
+                {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+            </ul>
+        );
     }
 
     render() {
@@ -12,9 +22,7 @@ class Counter extends Component {
             <React.Fragment>
                 <span style={{ fontSize: 15 }} className={this.getBadgeClasses()}>{this.formatCounter()}</span>
                 <button className="btn btn-secondary btn-sm">Incrememnt</button>
-                <ul>
-                    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-                </ul>
+                {this.renderTags()}
             </React.Fragment>
         );
     }
