@@ -3,8 +3,6 @@ import React, { Component } from "react";
 class Counter extends Component {
 
   render() {
-    // console.log('props', this.props);
-
     return (
       <div>
         <span style={{ fontSize: 15 }} className={this.getBadgeClasses()}>
