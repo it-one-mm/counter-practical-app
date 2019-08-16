@@ -11,6 +11,12 @@ class Counters extends Component {
     ]
   };
 
+  handleIncrement = counter => {
+    const counters = [...this.state.counters];
+    counters[0].value++;
+    console.log(this.state.counters[0]);
+  }
+
   handleReset = () => {
     const counters = this.state.counters.map(c => {
       c.value = 0;
@@ -30,7 +36,11 @@ class Counters extends Component {
       <React.Fragment>
         <button onClick={this.handleReset} className="btn btn-primary">Reset</button>
         {this.state.counters.map(counter => (
-          <Counter onDelete={this.handleDelete} key={counter.id} counter={counter} />
+          <Counter 
+            key={counter.id} 
+            counter={counter}
+            onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement} />
         ))}
       </React.Fragment>
     );
