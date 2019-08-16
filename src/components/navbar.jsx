@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class NavBar extends Component {
-    state = {  }
-    render() {
-        return (
-            <nav className="navbar navbar-light bg-light">
-                <a className="navbar-brand" href="#">
-                    Navbar{" "}
-                    <div className="badge badge-pill badge-secondary">
-                        {this.props.totalCounters}
-                    </div>
-                </a>
-            </nav>
-        );
-    }
+function NavBar(props) {
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+                Navbar{" "}
+                <div className="badge badge-pill badge-secondary">
+                    {props.totalCounters}
+                </div>
+            </a>
+        </nav>
+    );   
 }
 
 export default NavBar;
